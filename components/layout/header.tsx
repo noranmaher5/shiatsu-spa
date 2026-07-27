@@ -103,7 +103,7 @@ export function Header() {
             </Link>
           </Button>
 
-          <LanguageSwitcher className="hidden md:inline-flex" />
+          <LanguageSwitcher className="inline-flex px-2 text-xs md:px-3" />
 
           <MobileNav />
         </div>

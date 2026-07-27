@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { PUBLIC_ROUTES } from "@/lib/constants";
+import { LanguageSwitcher } from "./language-switcher";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -56,6 +57,9 @@ export function MobileNav() {
               </Link>
             ))}
           </nav>
+          <div className="mt-auto border-t border-border pt-4">
+            <LanguageSwitcher className="w-full justify-center" />
+          </div>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

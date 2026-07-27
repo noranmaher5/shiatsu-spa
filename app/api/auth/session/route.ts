@@ -14,7 +14,6 @@ const FIVE_DAYS_SECONDS = 60 * 60 * 24 * 5;
 export async function POST(request: NextRequest) {
   try {
     const { idToken } = (await request.json()) as { idToken?: string };
-
     if (!idToken) {
       return NextResponse.json({ error: "Missing idToken." }, { status: 400 });
     }
