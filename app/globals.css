@@ -1,0 +1,176 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/*
+ * ==========================================================================
+ * SHIATSU SPA KUWAIT — BRAND THEME (FIGMA VISUAL LANGUAGE + BRAND COLORS)
+ * Dark Forest Emerald Green & Muted Luxury Gold Palette
+ * ==========================================================================
+ */
+
+:root {
+  /* ---- Brand palette matching Figma luxury spa aesthetic ---- */
+  --brand-dark: #0d1b12; /* deep emerald black — primary background */
+  --brand-olive: #162b1e; /* forest dark green — card & secondary surfaces */
+  --brand-gold: #d6ad62; /* logo gold — primary accent, headings & CTAs */
+  --brand-taupe: #274733; /* subtle forest border / taupe outline */
+  --brand-cream: #f4efe6; /* warm off-white text & highlights */
+
+  /* ---- Semantic tokens (shadcn/ui contract) ---- */
+  --background: var(--brand-dark);
+  --foreground: var(--brand-cream);
+
+  --card: var(--brand-olive);
+  --card-foreground: var(--brand-cream);
+
+  --popover: var(--brand-olive);
+  --popover-foreground: var(--brand-cream);
+
+  --primary: var(--brand-gold);
+  --primary-foreground: #0d1b12;
+
+  --secondary: #23422e;
+  --secondary-foreground: var(--brand-cream);
+
+  --muted: #1e3827;
+  --muted-foreground: #a3b8aa;
+
+  --accent: var(--brand-gold);
+  --accent-foreground: #0d1b12;
+
+  --destructive: #b3423a;
+  --destructive-foreground: var(--brand-cream);
+
+  --border: #23422e;
+  --input: #23422e;
+  --ring: var(--brand-gold);
+
+  /* ---- Radius scale ---- */
+  --radius: 1rem;
+
+  /* ---- Elevation & Shadows ---- */
+  --shadow-soft: 0 4px 14px 0 rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+
+  /* ---- Typography ---- */
+  --font-sans: "Montserrat", "Segoe UI", Arial, sans-serif;
+  --font-arabic: "Cairo", Tahoma, Arial, sans-serif;
+  --font-serif: "Cormorant Garamond", "Montserrat", "Segoe UI", Arial, serif;
+  --font-script: "Alex Brush", "Segoe Script", cursive;
+}
+
+.admin-surface {
+  background-color: #f6f4ee;
+  color: #0d1b12;
+  min-height: 100vh;
+  --background: #f6f4ee;
+  --foreground: #0d1b12;
+  --card: #ffffff;
+  --card-foreground: #0d1b12;
+  --primary: #143725;
+  --primary-foreground: #ffffff;
+  --secondary: #ebd5b3;
+  --secondary-foreground: #0d1b12;
+  --muted: #eee7db;
+  --muted-foreground: #58695d;
+  --border: #e0d5c3;
+  --ring: #143725;
+  --accent: #c89c47;
+  --accent-foreground: #0d1b12;
+}
+
+.admin-surface h1,
+.admin-surface h2,
+.admin-surface h3,
+.admin-surface h4,
+.admin-surface h5,
+.admin-surface h6 {
+  color: #0d1b12;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-olive: var(--brand-olive);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-taupe: var(--brand-taupe);
+  --color-brand-cream: var(--brand-cream);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-card: var(--shadow-card);
+
+  --font-sans: var(--font-sans);
+  --font-arabic: var(--font-arabic);
+  --font-serif: var(--font-serif);
+  --font-script: var(--font-script);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+[dir="rtl"] body {
+  font-family: var(--font-arabic);
+}
+
+/* Custom Figma Typography Classes */
+.font-serif-heading {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.font-script-title {
+  font-family: var(--font-script);
+}
+
+/* Keep the visible brand typography close to the logo: geometric,
+   letter-spaced Montserrat with the same warm gold accent. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+  color: var(--brand-gold);
+}
+
+nav a {
+  color: var(--brand-gold);
+}
+
+/* Custom Arch Frame Shape from Figma */
+.rounded-arch {
+  border-radius: 120px 120px 24px 24px;
+}
+
+.rounded-capsule {
+  border-radius: 9999px;
+}

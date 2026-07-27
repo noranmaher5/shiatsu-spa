@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "branches": "Branches",
+    "gallery": "Gallery",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "common": {
+    "bookNow": "Book Now",
+    "viewDetails": "View Details",
+    "readMore": "Read More",
+    "loading": "Loading...",
+    "currency": "KWD",
+    "viewAll": "View All",
+    "more": "More",
+    "backToServices": "Back to Services",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "close": "Close",
+    "switchToArabic": "Switch to Arabic",
+    "switchToEnglish": "Switch to English"
+  },
+  "home": {
+    "aboutTeaser": {
+      "tagline": "About Us"
+    },
+    "featuredServices": {
+      "eyebrow": "Our Services",
+      "heading": "Our Signature Services",
+      "subheading": "Curated for Your Body & Mind",
+      "empty": "Featured services are coming soon.",
+      "rate": "Rate 5.0"
+    },
+    "testimonials": {
+      "heading": "What Our Guests Say",
+      "subheading": "Experiences from guests who refreshed their body and soul with us.",
+      "empty": "Testimonials are coming soon."
+    },
+    "gallery": {
+      "heading": "Sanctuary & Atmosphere",
+      "subheading": "Step into peace and elegance at Shiatsu Spa Kuwait."
+    },
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "subheading": "Everything you need to know about our therapeutic services."
+    }
+  },
+  "services": {
+    "heading": "Our Spa Services",
+    "subheading": "Curated therapeutic treatments designed to restore balance and harmony.",
+    "allCategories": "All",
+    "duration": "min",
+    "noServices": "No services available at the moment.",
+    "noServicesInCategory": "No services found in this category.",
+    "backToServices": "Back to Services",
+    "about": "About this Service"
+  },
+  "gallery": {
+    "heading": "Spa Gallery",
+    "subheading": "Immerse yourself in our tranquil spaces designed for relaxation and healing.",
+    "empty": "Gallery images are coming soon."
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions",
+    "subheading": "Have questions before your visit? Find everything you need to know below.",
+    "empty": "FAQs are coming soon."
+  },
+  "branches": {
+    "heading": "Our Branches",
+    "subheading": "Two premium wellness locations serving Kuwait.",
+    "empty": "Branch information is coming soon.",
+    "viewOnMap": "View on Maps",
+    "openHours": "Working Hours",
+    "loadMap": "Load Map",
+    "kuwaitMapTitle": "Shiatsu Spa branches in Kuwait",
+    "kuwaitMapHint": "Tap a branch pin to open its location in Google Maps",
+    "callBranch": "Call Branch",
+    "whatsappBranch": "Book via WhatsApp",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone Number",
+    "whatsappLabel": "WhatsApp",
+    "allBranches": "All Branches",
+    "salmiyaBranch": "Salmiya Branch",
+    "sharqBranch": "Kuwait City Branch"
+  },
+  "about": {
+    "heading": "About Us",
+    "subheading": "Learn about Shiatsu Spa Kuwait, our authentic Japanese wellness techniques, vision, and therapeutic mission.",
+    "vision": "Our Vision",
+    "mission": "Our Mission",
+    "empty": "About Us content is coming soon."
+  },
+  "contact": {
+    "heading": "Contact Us",
+    "subheading": "We are here to assist you, answer inquiries, and welcome your booking.",
+    "phone": "Phone",
+    "email": "Email",
+    "directBooking": "Direct Booking",
+    "branchesMap": "Our Branches & Location",
+    "empty": "Branch locations coming soon."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, we couldn't find the page you were looking for. It may have been moved or no longer exists.",
+    "backHome": "Back to Home"
+  },
+  "footer": {
+    "copyright": "© {year} Shiatsu Spa Kuwait. All rights reserved.",
+    "tagline": "Quality Touch"
+  },
+  "admin": {
+    "login": {
+      "title": "Admin Login",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign In",
+      "error": "Invalid email or password"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "services": "Services",
+      "categories": "Categories",
+      "gallery": "Gallery",
+      "faq": "FAQ",
+      "testimonials": "Testimonials",
+      "branches": "Branches",
+      "settings": "Settings",
+      "logout": "Logout"
+    }
+  }
+}
