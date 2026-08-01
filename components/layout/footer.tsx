@@ -104,7 +104,7 @@ export async function Footer() {
               className="flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#d6ad62]"
             >
               <span className="flex size-8 items-center justify-center rounded-full bg-white/10"><Phone className="size-4" aria-hidden="true" /></span>
-              {contact.phones[0]}
+              50890601
             </a>
           ) : null}
           {contact?.email ? (
@@ -113,7 +113,7 @@ export async function Footer() {
               className="flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#d6ad62]"
             >
               <span className="flex size-8 items-center justify-center rounded-full bg-white/10"><Mail className="size-4" aria-hidden="true" /></span>
-              {contact.email}
+              <span className="break-all">{contact.email}</span>
             </a>
           ) : null}
           <Link href={PUBLIC_ROUTES.contact} className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-[#d6ad62] transition-colors hover:text-white">

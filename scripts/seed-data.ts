@@ -745,3 +745,92 @@ export const testimonialsSeed: TestimonialSeed[] = [
     isActive: true,
   },
 ];
+
+// ---------------------------------------------------------------------------
+// ARTICLES — auto-generated IDs, matched by slug on re-seed
+// ---------------------------------------------------------------------------
+
+export type ArticleSeed = {
+  slug: string;
+  title: Bilingual;
+  excerpt: Bilingual;
+  content: Bilingual;
+  author: Bilingual;
+  publishedAt: string;
+  metaTitle?: Bilingual;
+  metaDescription?: Bilingual;
+  coverImageUrl: string | null;
+  order: number;
+  isActive: boolean;
+};
+
+export const articlesSeed: ArticleSeed[] = [
+  {
+    slug: "benefits-of-shiatsu-massage",
+    title: bilingual(
+      "Benefits of Shiatsu Massage for Men's Wellness",
+      "فوائد مساج الشياتسو لصحة الرجل",
+    ),
+    excerpt: bilingual(
+      "Discover how Shiatsu massage relieves stress, improves circulation, and restores balance for busy professionals in Kuwait.",
+      "اكتشف كيف يخفّف مساج الشياتسو التوتر، ويحسّن الدورة الدموية، ويعيد التوازن للرجال في الكويت.",
+    ),
+    content: bilingual(
+      "Shiatsu is a Japanese therapeutic technique that uses finger pressure along energy meridians to release tension and restore the body's natural balance.\n\nFor men who spend long hours at work or behind the wheel, Shiatsu massage offers deep relief for the back, neck, and shoulders — areas that carry the most daily stress.\n\nRegular sessions can improve sleep quality, reduce muscle stiffness, and boost mental clarity. At Shiatsu Spa Kuwait, our trained therapists tailor each session to your needs in a private, Sharia-compliant environment.",
+      "الشياتسو تقنية علاجية يابانية تستخدم الضغط بالأصابع على نقاط الطاقة لتحرير التوتر واستعادة توازن الجسم الطبيعي.\n\nللرجال الذين يقضون ساعات طويلة في العمل أو القيادة، يوفّر مساج الشياتسو راحة عميقة للظهر والرقبة والكتفين — المناطق التي تحمل أكبر ضغط يومي.\n\nالجلسات المنتظمة تحسّن جودة النوم، وتقلّل تصلّب العضلات، وتعزّز الوضوح الذهني. في شياتسو سبا الكويت، يخصّص معالجونا كل جلسة حسب احتياجاتك في بيئة خاصة وشرعية.",
+    ),
+    author: bilingual("Shiatsu Spa", "شياتسو سبا"),
+    publishedAt: "2025-01-15",
+    metaTitle: bilingual(
+      "Shiatsu Massage Benefits | Shiatsu Spa Kuwait",
+      "فوائد مساج الشياتسو | شياتسو سبا الكويت",
+    ),
+    metaDescription: bilingual(
+      "Learn the top benefits of Shiatsu massage for stress relief, muscle recovery, and men's wellness in Kuwait.",
+      "تعرّف على أهم فوائد مساج الشياتسو لتخفيف التوتر واستعادة العافية في الكويت.",
+    ),
+    coverImageUrl: null,
+    order: 0,
+    isActive: true,
+  },
+  {
+    slug: "how-to-choose-the-right-massage",
+    title: bilingual(
+      "How to Choose the Right Massage for You",
+      "كيف تختار نوع المساج المناسب لك",
+    ),
+    excerpt: bilingual(
+      "Swedish, deep tissue, hot stone, or Shiatsu? A quick guide to picking the treatment that matches your body and goals.",
+      "سويدي، deep tissue، حجارة ساخنة، أم شياتسو؟ دليل سريع لاختيار العلاج المناسب لجسمك وأهدافك.",
+    ),
+    content: bilingual(
+      "Not every massage is the same. The best treatment depends on what your body needs today.\n\n• Swedish massage — gentle, relaxing, ideal for first-time visitors.\n• Deep tissue — targets chronic muscle knots and sports recovery.\n• Hot stone — warmth penetrates deep layers for maximum relaxation.\n• Shiatsu — pressure-point therapy that restores energy flow.\n\nOur team at Shiatsu Spa can recommend the perfect session during your visit. Book via WhatsApp and tell us how you're feeling — we'll take care of the rest.",
+      "ليست كل جلسات المساج متشابهة. العلاج الأفضل يعتمد على ما يحتاجه جسمك اليوم.\n\n• المساج السويدي — لطيف ومريح، مثالي للزوار لأول مرة.\n• Deep tissue — يستهدف العقد العضلية المزمنة واستعادة اللياقة.\n• الحجارة الساخنة — الدفء يخترق الطبقات العميقة لأقصى استرخاء.\n• الشياتسو — علاج بنقاط الضغط يعيد تدفق الطاقة.\n\nفريقنا في شياتسو سبا يساعدك في اختيار الجلسة المثالية. احجز عبر واتساب وأخبرنا كيف تشعر — ونحن نتولى الباقي.",
+    ),
+    author: bilingual("Shiatsu Spa", "شياتسو سبا"),
+    publishedAt: "2025-02-01",
+    coverImageUrl: null,
+    order: 1,
+    isActive: true,
+  },
+  {
+    slug: "wellness-tips-for-busy-professionals",
+    title: bilingual(
+      "5 Wellness Tips for Busy Professionals in Kuwait",
+      "٥ نصائح للعافية للمحترفين المشغولين في الكويت",
+    ),
+    excerpt: bilingual(
+      "Simple habits — from hydration to regular massage — that help you stay energized despite a demanding schedule.",
+      "عادات بسيطة — من شرب الماء إلى المساج المنتظم — تساعدك على البقاء نشيطًا رغم جدولك المزدحم.",
+    ),
+    content: bilingual(
+      "A demanding career doesn't have to mean sacrificing your wellbeing. Here are five practical tips our guests swear by:\n\n1. Schedule recovery like a meeting — block time for a monthly massage.\n2. Stay hydrated, especially in Kuwait's climate.\n3. Stretch for 5 minutes before bed to release neck and shoulder tension.\n4. Take short walking breaks during the workday.\n5. Prioritize sleep — it's when your body repairs itself.\n\nShiatsu Spa is open daily from 9 AM to 5 AM, so you can book a session that fits your schedule, even after work.",
+      "مسيرة مهنية مزدحمة لا تعني التضحية بصحتك. إليك خمس نصائح عملية يؤكد عليها ضيوفنا:\n\n1. جدّول الاسترخاء كموعد — خصّص وقتًا لمساج شهري.\n2. اشرب الماء بانتظام، خاصة في مناخ الكويت.\n3. تمدّد 5 دقائق قبل النوم لتحرير توتر الرقبة والكتفين.\n4. خذ استراحات مشي قصيرة خلال يوم العمل.\n5. أعطِ النوم أولوية — فهو وقت تعافي جسمك.\n\nشياتسو سبا مفتوح يوميًا من 9 صباحًا حتى 5 فجرًا، لتتمكن من الحجز في الوقت المناسب لك.",
+    ),
+    author: bilingual("Shiatsu Spa", "شياتسو سبا"),
+    publishedAt: "2025-03-10",
+    coverImageUrl: null,
+    order: 2,
+    isActive: true,
+  },
+];

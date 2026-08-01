@@ -12,6 +12,8 @@ export const REVALIDATE_TAGS = {
   gallery: "gallery",
   faq: "faq",
   testimonials: "testimonials",
+  articles: "articles",
+  articleDetail: (slug: string) => `article:${slug}`,
   settingsHero: "settings:hero",
   settingsCompany: "settings:company",
   settingsContact: "settings:contact",

@@ -3,7 +3,7 @@
  * Firestore database seeder.
  *
  * Populates every collection the app reads from:
- *   settings, categories, services, branches, gallery, faq, testimonials
+ *   settings, categories, services, branches, gallery, faq, testimonials, articles
  *
  * Content lives in `scripts/seed-data.ts`, never inline here — this
  * file only knows how to WRITE data, not what the data is.
@@ -23,8 +23,8 @@
  *     document IDs and are upserted with `{ merge: true }`, so
  *     existing fields not present in the seed data are preserved
  *     rather than wiped.
- *   - `categories`, `services`, `branches`, `gallery`, `faq`, and
- *     `testimonials` use Firestore auto-generated IDs. To keep re-runs
+ *   - `categories`, `services`, `branches`, `gallery`, `faq`,
+ *     `testimonials`, and `articles` use Firestore auto-generated IDs. To keep re-runs
  *     idempotent (no duplicate documents piling up on every run),
  *     each of those collections is fully cleared and rewritten in a
  *     batch, so the collection always ends up matching seed-data.ts
@@ -42,7 +42,8 @@ import { FieldValue, type WriteBatch } from "firebase-admin/firestore";
 // load it explicitly before importing ./lib/admin (which reads
 // process.env at module-init time).
 loadEnv({ path: resolve(process.cwd(), ".env.local") });
-const { adminDb } = await import("./lib/admin");
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const { adminDb } = require("./lib/admin") as typeof import("./lib/admin");
 import {
   heroSettingsSeed,
   companySettingsSeed,
@@ -56,6 +57,7 @@ import {
   gallerySeed,
   faqSeed,
   testimonialsSeed,
+  articlesSeed,
   serviceEnglishNames,
   type CategorySeed,
 } from "./seed-data";
@@ -212,6 +214,24 @@ async function seedTestimonials(): Promise<void> {
   console.log(`✓ Testimonials seeded (${docs.length})`);
 }
 
+async function seedArticles(): Promise<void> {
+  const docs = articlesSeed.map((item) => ({
+    title: item.title,
+    slug: item.slug,
+    excerpt: item.excerpt,
+    content: item.content,
+    coverImageUrl: item.coverImageUrl,
+    author: item.author,
+    publishedAt: item.publishedAt,
+    metaTitle: item.metaTitle ?? { en: "", ar: "" },
+    metaDescription: item.metaDescription ?? { en: "", ar: "" },
+    order: item.order,
+    isActive: item.isActive,
+  }));
+  await reseedCollection("articles", docs);
+  console.log(`✓ Articles seeded (${docs.length})`);
+}
+
 async function main(): Promise<void> {
   console.log("Seeding Firestore database…\n");
 
@@ -221,6 +241,7 @@ async function main(): Promise<void> {
   await seedGallery();
   await seedFaq();
   await seedTestimonials();
+  await seedArticles();
   await seedSettings();
 
   console.log("\n✓ Database completed");

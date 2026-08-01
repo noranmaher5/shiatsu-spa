@@ -29,6 +29,7 @@ export function Header() {
     { href: PUBLIC_ROUTES.home, label: t("home") },
     { href: PUBLIC_ROUTES.about, label: t("about") },
     { href: PUBLIC_ROUTES.services, label: t("services") },
+    { href: PUBLIC_ROUTES.articles, label: t("articles") },
     { href: PUBLIC_ROUTES.gallery, label: t("gallery") },
     { href: PUBLIC_ROUTES.contact, label: t("contact") },
   ];

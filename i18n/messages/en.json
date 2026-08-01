@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About Us",
     "services": "Services",
+    "articles": "Articles",
     "branches": "Branches",
     "gallery": "Gallery",
     "faq": "FAQ",
@@ -62,6 +63,12 @@
     "heading": "Spa Gallery",
     "subheading": "Immerse yourself in our tranquil spaces designed for relaxation and healing.",
     "empty": "Gallery images are coming soon."
+  },
+  "articles": {
+    "heading": "Articles",
+    "subheading": "Wellness tips and insights on massage, relaxation, and self-care.",
+    "noArticles": "No articles available at the moment.",
+    "backToArticles": "Back to Articles"
   },
   "faq": {
     "heading": "Frequently Asked Questions",
@@ -124,6 +131,7 @@
       "services": "Services",
       "categories": "Categories",
       "gallery": "Gallery",
+      "articles": "Articles",
       "faq": "FAQ",
       "testimonials": "Testimonials",
       "branches": "Branches",

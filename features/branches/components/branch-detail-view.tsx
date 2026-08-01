@@ -44,10 +44,11 @@ export function BranchDetailView({ branch, embedUrl }: BranchDetailViewProps) {
 
           <a
             href={`tel:${branch.phone}`}
-            className="hover:text-primary flex items-center gap-2"
+            dir="ltr"
+            className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/15 bg-primary/10 px-3 py-2 font-semibold text-foreground transition-colors hover:border-primary/30 hover:bg-primary/20 hover:text-primary"
           >
             <Phone className="size-5" aria-hidden="true" />
-            {branch.phone}
+            <span className="font-mono tracking-[0.04em]">{branch.phone}</span>
           </a>
 
           <div className="mt-2 flex flex-wrap gap-3">

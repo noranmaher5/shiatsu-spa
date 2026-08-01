@@ -10,6 +10,7 @@ import {
   Settings,
   ShieldCheck,
   Zap,
+  Newspaper,
 } from "lucide-react";
 import { ADMIN_ROUTES } from "@/lib/constants";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,16 +20,18 @@ import { getAllCategoriesAdmin } from "@/features/categories/api";
 import { getAllBranchesAdmin } from "@/features/branches/api";
 import { getAllGalleryItemsAdmin } from "@/features/gallery/api";
 import { getAllTestimonialsAdmin } from "@/features/testimonials/api";
+import { getAllArticlesAdmin } from "@/features/articles/api";
 
 export const metadata = { title: "Dashboard" };
 
 export default async function AdminDashboardPage() {
-  const [services, categories, branches, gallery, testimonials] = await Promise.all([
+  const [services, categories, branches, gallery, testimonials, articles] = await Promise.all([
     getAllServicesAdmin(),
     getAllCategoriesAdmin(),
     getAllBranchesAdmin(),
     getAllGalleryItemsAdmin(),
     getAllTestimonialsAdmin(),
+    getAllArticlesAdmin(),
   ]);
 
   const cards = [
@@ -82,11 +85,22 @@ export default async function AdminDashboardPage() {
       iconBg: "bg-rose-900/20 text-rose-700",
       badgeColor: "bg-rose-500/10 text-rose-800 border-rose-500/20",
     },
+    {
+      href: ADMIN_ROUTES.articles,
+      label: "Articles",
+      icon: Newspaper,
+      total: articles.length,
+      active: articles.filter((item) => item.isActive).length,
+      gradient: "from-sky-500/20 to-sky-700/5",
+      iconBg: "bg-sky-900/20 text-sky-700",
+      badgeColor: "bg-sky-500/10 text-sky-800 border-sky-500/20",
+    },
   ];
 
   const quickActions = [
     { label: "Add New Service", href: `${ADMIN_ROUTES.services}/new`, icon: Plus, bg: "bg-[#143725] text-white hover:bg-[#0d1b12]" },
     { label: "Manage Gallery", href: ADMIN_ROUTES.gallery, icon: Images, bg: "bg-card border border-border text-foreground hover:bg-muted/50" },
+    { label: "Add New Article", href: `${ADMIN_ROUTES.articles}/new`, icon: Plus, bg: "bg-card border border-border text-foreground hover:bg-muted/50" },
     { label: "Website Settings", href: ADMIN_ROUTES.settings, icon: Settings, bg: "bg-card border border-border text-foreground hover:bg-muted/50" },
     { label: "Branches", href: ADMIN_ROUTES.branches, icon: Building2, bg: "bg-card border border-border text-foreground hover:bg-muted/50" },
   ];

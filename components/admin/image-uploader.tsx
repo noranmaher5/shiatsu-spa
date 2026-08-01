@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 type ImageUploaderProps = {
   value: string | null;
   onChange: (url: string | null) => void;
-  folder: "settings" | "branches" | "categories" | "services" | "gallery";
+  folder: "settings" | "branches" | "categories" | "services" | "gallery" | "articles";
   label?: string;
   className?: string;
   aspectClassName?: string;

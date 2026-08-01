@@ -89,10 +89,10 @@ export async function HeroSection() {
 
             <h1 className="font-serif-heading text-4xl leading-[1.1] font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               {title}
+              <span className="text-primary glow-primary block">
+                {titleAccent}
+              </span>
             </h1>
-            <span className="font-script-title text-primary glow-primary -mt-1 block text-5xl sm:text-6xl lg:text-7xl">
-              {titleAccent}
-            </span>
 
             <div className="bg-primary/60 my-6 h-0.5 w-16" aria-hidden="true" />
 

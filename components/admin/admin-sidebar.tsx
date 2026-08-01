@@ -13,6 +13,7 @@ import {
   Settings,
   ExternalLink,
   Crown,
+  Newspaper,
 } from "lucide-react";
 import { ADMIN_ROUTES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -23,6 +24,7 @@ const NAV_ITEMS = [
   { href: ADMIN_ROUTES.categories, label: "Categories", icon: LayoutGrid },
   { href: ADMIN_ROUTES.branches, label: "Branches", icon: Building2 },
   { href: ADMIN_ROUTES.gallery, label: "Gallery", icon: Images },
+  { href: ADMIN_ROUTES.articles, label: "Articles", icon: Newspaper },
   { href: ADMIN_ROUTES.testimonials, label: "Testimonials", icon: MessageSquareQuote },
   { href: ADMIN_ROUTES.settings, label: "Settings", icon: Settings },
 ];

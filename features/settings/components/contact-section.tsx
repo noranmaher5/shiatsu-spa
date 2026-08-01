@@ -47,14 +47,15 @@ export async function ContactSection() {
                 <h3 className="font-sans text-lg font-semibold">
                   {tContact("phone")}
                 </h3>
-                <div className="mt-2 space-y-1">
+                <div className="mt-3 flex w-full flex-col gap-2">
                   {contact.phones.map((phone) => (
                     <a
                       key={phone}
                       href={`tel:${phone}`}
-                      className="text-muted-foreground hover:text-primary block text-sm transition-colors"
+                      dir="ltr"
+                      className="flex items-center justify-center rounded-xl border border-primary/15 bg-primary/5 px-3 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary/30 hover:bg-primary/10 hover:text-primary"
                     >
-                      {phone}
+                      <span className="font-mono tracking-[0.04em]">{phone}</span>
                     </a>
                   ))}
                 </div>
@@ -75,9 +76,9 @@ export async function ContactSection() {
                 </h3>
                 <a
                   href={`mailto:${contact.email}`}
-                  className="text-muted-foreground hover:text-primary mt-2 block text-sm transition-colors"
+                  className="mt-3 inline-flex rounded-xl border border-primary/15 bg-primary/5 px-3 py-2 text-sm font-medium text-foreground transition-colors hover:border-primary/30 hover:bg-primary/10 hover:text-primary"
                 >
-                  {contact.email}
+                  <span className="break-all">{contact.email}</span>
                 </a>
               </CardContent>
             </Card>

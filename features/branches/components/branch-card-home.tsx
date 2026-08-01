@@ -36,10 +36,11 @@ export function BranchCardHome({ branch }: { branch: Branch }) {
         <WorkingHoursBadge workingHours={branch.workingHours} />
         <a
           href={`tel:${branch.phone}`}
-          className="hover:text-primary flex items-center gap-2 text-sm"
+          dir="ltr"
+          className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/15 bg-primary/10 px-3 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary/30 hover:bg-primary/20 hover:text-primary"
         >
           <Phone className="size-4" aria-hidden="true" />
-          {branch.phone}
+          <span className="font-mono tracking-[0.04em]">{branch.phone}</span>
         </a>
       </CardContent>
 

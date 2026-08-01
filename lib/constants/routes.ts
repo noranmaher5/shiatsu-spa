@@ -6,6 +6,8 @@ export const PUBLIC_ROUTES = {
   serviceDetail: (slug: string) => `/services/${slug}`,
   branches: "/branches",
   gallery: "/gallery",
+  articles: "/articles",
+  articleDetail: (slug: string) => `/articles/${slug}`,
   contact: "/contact",
 } as const;
 
@@ -20,5 +22,8 @@ export const ADMIN_ROUTES = {
   gallery: "/admin/gallery",
   testimonials: "/admin/testimonials",
   branches: "/admin/branches",
+  articles: "/admin/articles",
+  newArticle: "/admin/articles/new",
+  editArticle: (id: string) => `/admin/articles/${id}`,
   settings: "/admin/settings",
 } as const;

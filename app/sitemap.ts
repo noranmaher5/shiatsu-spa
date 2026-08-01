@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { PUBLIC_ROUTES } from "@/lib/constants";
 import { getActiveServices } from "@/features/services/api";
+import { getActiveArticles } from "@/features/articles/api";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shiatsuspa.org";
 
@@ -11,6 +12,7 @@ const STATIC_PATHS: string[] = [
   PUBLIC_ROUTES.services,
   PUBLIC_ROUTES.branches,
   PUBLIC_ROUTES.gallery,
+  PUBLIC_ROUTES.articles,
   PUBLIC_ROUTES.contact,
 ];
 
@@ -22,7 +24,10 @@ const STATIC_PATHS: string[] = [
  * than throwing, so the static routes still get indexed.
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const services = await getActiveServices();
+  const [services, articles] = await Promise.all([
+    getActiveServices(),
+    getActiveArticles(),
+  ]);
 
   const entries: MetadataRoute.Sitemap = [];
 
@@ -43,6 +48,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: service.updatedAt ? new Date(service.updatedAt) : new Date(),
         changeFrequency: "monthly",
         priority: 0.8,
+      });
+    }
+
+    for (const article of articles) {
+      entries.push({
+        url: `${siteUrl}/${locale}${PUBLIC_ROUTES.articleDetail(article.slug)}`,
+        lastModified: article.updatedAt ? new Date(article.updatedAt) : new Date(article.publishedAt),
+        changeFrequency: "weekly",
+        priority: 0.75,
       });
     }
   }
