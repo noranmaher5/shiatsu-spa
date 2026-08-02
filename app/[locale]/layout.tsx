@@ -24,6 +24,9 @@ const FALLBACK_DESCRIPTION: Record<Locale, string> = {
   ar: "شياتسو سبا الكويت — خدمات علاجية ومساج احترافية عبر فرعين في الكويت.",
 };
 
+const ARABIC_SOCIAL_DESCRIPTION =
+  "\u0639\u0644\u0627\u062c\u0627\u062a \u0645\u0633\u0627\u062c \u0648\u0639\u0627\u0641\u064a\u0629 \u0627\u062d\u062a\u0631\u0627\u0641\u064a\u0629 \u0641\u064a \u0634\u064a\u0627\u062a\u0633\u0648 \u0633\u0628\u0627 \u0627\u0644\u0643\u0648\u064a\u062a\u060c \u0645\u0639 \u0641\u0631\u0639\u064a\u0646 \u062e\u0627\u0635\u064a\u0646 \u0641\u064a \u0627\u0644\u0631\u0642\u0639\u064a \u0648\u0635\u0628\u0627\u062d \u0627\u0644\u0633\u0627\u0644\u0645.";
+
 const FALLBACK_OG_IMAGE = "/images/og-image.jpg";
 
 const FALLBACK_SOCIAL_DESCRIPTION: Record<Locale, string> = {
@@ -61,7 +64,12 @@ export async function generateMetadata({
     (usableMetadata(seo?.metaDescription?.[locale]) && seo?.metaDescription?.[locale]) ||
     (usableMetadata(company?.aboutUs?.[locale]) && company?.aboutUs?.[locale]) ||
     FALLBACK_DESCRIPTION[locale];
-  const socialDescription = description.length > 160 ? FALLBACK_SOCIAL_DESCRIPTION[locale] : description;
+  const socialDescription =
+    locale === "ar"
+      ? ARABIC_SOCIAL_DESCRIPTION
+      : description.length > 160
+        ? FALLBACK_SOCIAL_DESCRIPTION[locale]
+        : description;
   const ogImage = seo?.ogImageUrl || FALLBACK_OG_IMAGE;
   const favicon = seo?.faviconUrl || "/images/logo/logo 1.png";
 
