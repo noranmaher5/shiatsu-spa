@@ -98,15 +98,16 @@ export async function Footer() {
 
         <div className="flex flex-col gap-3">
           <h2 className="mb-1 text-sm font-semibold tracking-widest text-[#d6ad62] uppercase">Contact Us</h2>
-          {contact?.phones?.[0] ? (
+          {contact?.phones?.map((phone) => (
             <a
-              href={`tel:${contact.phones[0]}`}
+              key={phone}
+              href={`tel:${phone}`}
               className="flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#d6ad62]"
             >
               <span className="flex size-8 items-center justify-center rounded-full bg-white/10"><Phone className="size-4" aria-hidden="true" /></span>
-              50890601
+              {phone}
             </a>
-          ) : null}
+          ))}
           {contact?.email ? (
             <a
               href={`mailto:${contact.email}`}

@@ -26,7 +26,7 @@ export async function HeroSection() {
 
   const eyebrow = fallback.eyebrow;
   const title = cmsText(hero ? (isArabic ? hero.title.ar : hero.title.en) : undefined, fallback.title);
-  const titleAccent = fallback.titleAccent;
+  const titleAccent = ` ${fallback.titleAccent}`;
   const subtitle = cmsText(
     hero ? (isArabic ? hero.subtitle.ar : hero.subtitle.en) : undefined,
     fallback.subtitle,

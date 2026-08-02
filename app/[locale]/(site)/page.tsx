@@ -8,7 +8,7 @@ import { GallerySection } from "@/features/gallery";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Home | Shiatsu Spa Kuwait",
+  title: "Home",
   description:
     "Shiatsu Spa Kuwait — Professional Japanese therapeutic massage, body treatments, and luxury wellness across two Kuwait branches.",
 };

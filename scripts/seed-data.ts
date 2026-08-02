@@ -39,7 +39,7 @@ export const heroSettingsSeed = {
   // example content ("Look Sharp. Feel Confident." — a barbershop example)
   // rather than Shiatsu Spa's own hero copy. Replace all fields below
   // once the client sends their real homepage banner text.
-  title: bilingual("Relax, Recharge,", "استرخِ، استعد طاقتك،"),
+  title: bilingual("Relax, Recharge, ", "استرخِ، استعد طاقتك، "),
   subtitle: bilingual(
     "Luxury wellness tailored for gentlemen — therapeutic touch in a private, discreet retreat.",
     "تجربة عناية فاخرة مصممة خصيصًا للرجال، بلمسة علاجية خاصة وخصوصية تامة في الكويت.",
@@ -801,11 +801,11 @@ export const articlesSeed: ArticleSeed[] = [
     ),
     excerpt: bilingual(
       "Swedish, deep tissue, hot stone, or Shiatsu? A quick guide to picking the treatment that matches your body and goals.",
-      "سويدي، deep tissue، حجارة ساخنة، أم شياتسو؟ دليل سريع لاختيار العلاج المناسب لجسمك وأهدافك.",
+      "سويدي، تدليك عميق، حجارة ساخنة، أم شياتسو؟ دليل سريع لاختيار العلاج المناسب لجسمك وأهدافك.",
     ),
     content: bilingual(
       "Not every massage is the same. The best treatment depends on what your body needs today.\n\n• Swedish massage — gentle, relaxing, ideal for first-time visitors.\n• Deep tissue — targets chronic muscle knots and sports recovery.\n• Hot stone — warmth penetrates deep layers for maximum relaxation.\n• Shiatsu — pressure-point therapy that restores energy flow.\n\nOur team at Shiatsu Spa can recommend the perfect session during your visit. Book via WhatsApp and tell us how you're feeling — we'll take care of the rest.",
-      "ليست كل جلسات المساج متشابهة. العلاج الأفضل يعتمد على ما يحتاجه جسمك اليوم.\n\n• المساج السويدي — لطيف ومريح، مثالي للزوار لأول مرة.\n• Deep tissue — يستهدف العقد العضلية المزمنة واستعادة اللياقة.\n• الحجارة الساخنة — الدفء يخترق الطبقات العميقة لأقصى استرخاء.\n• الشياتسو — علاج بنقاط الضغط يعيد تدفق الطاقة.\n\nفريقنا في شياتسو سبا يساعدك في اختيار الجلسة المثالية. احجز عبر واتساب وأخبرنا كيف تشعر — ونحن نتولى الباقي.",
+      "ليست كل جلسات المساج متشابهة. العلاج الأفضل يعتمد على ما يحتاجه جسمك اليوم.\n\n• المساج السويدي — لطيف ومريح، مثالي للزوار لأول مرة.\n• التدليك العميق — يستهدف العقد العضلية المزمنة واستعادة اللياقة.\n• الحجارة الساخنة — الدفء يخترق الطبقات العميقة لأقصى استرخاء.\n• الشياتسو — علاج بنقاط الضغط يعيد تدفق الطاقة.\n\nفريقنا في شياتسو سبا يساعدك في اختيار الجلسة المثالية. احجز عبر واتساب وأخبرنا كيف تشعر — ونحن نتولى الباقي.",
     ),
     author: bilingual("Shiatsu Spa", "شياتسو سبا"),
     publishedAt: "2025-02-01",

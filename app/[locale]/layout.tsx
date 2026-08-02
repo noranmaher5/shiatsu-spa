@@ -12,7 +12,7 @@ import {
 import { StructuredData } from "@/components/shared/structured-data";
 import { AnalyticsScripts } from "@/components/shared/analytics-scripts";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shiatsuspa.org";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shiatsuspakw.com";
 
 const FALLBACK_TITLE: Record<Locale, string> = {
   en: "Shiatsu Spa Kuwait | Quality Touch",
@@ -23,6 +23,12 @@ const FALLBACK_DESCRIPTION: Record<Locale, string> = {
   en: "Shiatsu Spa Kuwait — professional wellness and massage therapy services across two branches in Kuwait.",
   ar: "شياتسو سبا الكويت — خدمات علاجية ومساج احترافية عبر فرعين في الكويت.",
 };
+
+const FALLBACK_OG_IMAGE = "/images/hero/hero.jpg";
+
+function usableMetadata(value: string | undefined | null): value is string {
+  return Boolean(value?.trim() && !value.includes("TODO"));
+}
 
 /**
  * Site-wide metadata is admin-editable via the /settings/seo Firestore
@@ -40,10 +46,15 @@ export async function generateMetadata({
   setRequestLocale(locale);
   const [seo, company] = await Promise.all([getSeoSettings(), getCompanySettings()]);
 
-  const title = seo?.metaTitle?.[locale] || company?.name?.[locale] || FALLBACK_TITLE[locale];
+  const title =
+    (usableMetadata(seo?.metaTitle?.[locale]) && seo?.metaTitle?.[locale]) ||
+    (usableMetadata(company?.name?.[locale]) && company?.name?.[locale]) ||
+    FALLBACK_TITLE[locale];
   const description =
-    seo?.metaDescription?.[locale] || company?.aboutUs?.[locale] || FALLBACK_DESCRIPTION[locale];
-  const ogImage = seo?.ogImageUrl || undefined;
+    (usableMetadata(seo?.metaDescription?.[locale]) && seo?.metaDescription?.[locale]) ||
+    (usableMetadata(company?.aboutUs?.[locale]) && company?.aboutUs?.[locale]) ||
+    FALLBACK_DESCRIPTION[locale];
+  const ogImage = seo?.ogImageUrl || FALLBACK_OG_IMAGE;
   const favicon = seo?.faviconUrl || "/images/logo/logo 1.png";
 
   const languages = Object.fromEntries(
@@ -69,13 +80,13 @@ export async function generateMetadata({
       siteName: company?.name?.[locale] || FALLBACK_TITLE[locale],
       locale: locale === "ar" ? "ar_KW" : "en_US",
       type: "website",
-      images: ogImage ? [{ url: ogImage }] : undefined,
+      images: [{ url: ogImage }],
     },
     twitter: {
-      card: ogImage ? "summary_large_image" : "summary",
+      card: "summary_large_image",
       title,
       description,
-      images: ogImage ? [ogImage] : undefined,
+      images: [ogImage],
     },
     robots: { index: true, follow: true },
     icons: {

@@ -4,7 +4,7 @@ import { PUBLIC_ROUTES } from "@/lib/constants";
 import { getActiveServices } from "@/features/services/api";
 import { getActiveArticles } from "@/features/articles/api";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shiatsuspa.org";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shiatsuspakw.com";
 
 const STATIC_PATHS: string[] = [
   PUBLIC_ROUTES.home,
