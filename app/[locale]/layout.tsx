@@ -24,7 +24,12 @@ const FALLBACK_DESCRIPTION: Record<Locale, string> = {
   ar: "شياتسو سبا الكويت — خدمات علاجية ومساج احترافية عبر فرعين في الكويت.",
 };
 
-const FALLBACK_OG_IMAGE = "/images/hero/hero.jpg";
+const FALLBACK_OG_IMAGE = "/images/og-image.jpg";
+
+const FALLBACK_SOCIAL_DESCRIPTION: Record<Locale, string> = {
+  en: "Professional massage and wellness treatments at Shiatsu Spa Kuwait, with private branches in Salmiya and Sharq.",
+  ar: "علاجات مساج وعافية احترافية في شياتسو سبا الكويت، مع فرعين خاصين في السالمية والشرق.",
+};
 
 function usableMetadata(value: string | undefined | null): value is string {
   return Boolean(value?.trim() && !value.includes("TODO"));
@@ -46,14 +51,17 @@ export async function generateMetadata({
   setRequestLocale(locale);
   const [seo, company] = await Promise.all([getSeoSettings(), getCompanySettings()]);
 
+  const companyName = usableMetadata(company?.name?.[locale]) ? company.name[locale] : undefined;
+  const companyTitleSuffix = locale === "ar" ? " الكويت | لمسة جودة" : " Kuwait | Quality Touch";
   const title =
     (usableMetadata(seo?.metaTitle?.[locale]) && seo?.metaTitle?.[locale]) ||
-    (usableMetadata(company?.name?.[locale]) && company?.name?.[locale]) ||
+    (companyName ? `${companyName}${companyTitleSuffix}` : undefined) ||
     FALLBACK_TITLE[locale];
   const description =
     (usableMetadata(seo?.metaDescription?.[locale]) && seo?.metaDescription?.[locale]) ||
     (usableMetadata(company?.aboutUs?.[locale]) && company?.aboutUs?.[locale]) ||
     FALLBACK_DESCRIPTION[locale];
+  const socialDescription = description.length > 160 ? FALLBACK_SOCIAL_DESCRIPTION[locale] : description;
   const ogImage = seo?.ogImageUrl || FALLBACK_OG_IMAGE;
   const favicon = seo?.faviconUrl || "/images/logo/logo 1.png";
 
@@ -75,7 +83,7 @@ export async function generateMetadata({
     },
     openGraph: {
       title,
-      description,
+      description: socialDescription,
       url: `${siteUrl}/${locale}`,
       siteName: company?.name?.[locale] || FALLBACK_TITLE[locale],
       locale: locale === "ar" ? "ar_KW" : "en_US",
@@ -85,7 +93,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title,
-      description,
+      description: socialDescription,
       images: [ogImage],
     },
     robots: { index: true, follow: true },
